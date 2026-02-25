@@ -16,9 +16,9 @@ from data_preprocessing import load_data, preprocess_data
 def build_models():
     models = {
         "logistic_regression": LogisticRegression(max_iter=1000),
-        "random_forest": RandomForestClassifier(n_estimators=200, random_state=42),
+        "random_forest": RandomForestClassifier(n_estimators=100, criterion="entropy", random_state=42),
         "xgboost": XGBClassifier(
-            n_estimators=200,
+            n_estimators=100,
             learning_rate=0.05,
             max_depth=4,
             eval_metric="logloss",
